@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from hood.models import Business, Neighborhood, Post, Profile
 
 # Register your models here.

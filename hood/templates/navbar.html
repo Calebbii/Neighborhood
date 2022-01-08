@@ -1,20 +1,32 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">NextGen Hood</a>
+      <a class="navbar-brand" href="{%url 'home'%}">NextGen Hood</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="{%url 'home'%}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{%url 'neighborhood' %}">Neighborhood</a>
+            <a class="nav-link" href="{% url 'admin:index' %}">Admin Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Neighborhood</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Business</a>
           </li>
+          <li class="nav-item active">
+            <form action="{% url 'search' %}" class="form-inline mr-auto my-1">
+              <div class="md-form form-sm my-0">
+                <input class="form-control form-control-sm mr-sm-2 mb-0" name="search" id="search_business" type="search" placeholder="Business Search "
+                  aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </div>
+            </form>
+            </li>
         </ul>
         {% if user.is_authenticated %}
       <ul class="navbar-nav ml-auto nav-flex-icons"> 

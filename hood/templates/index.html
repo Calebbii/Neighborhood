@@ -15,7 +15,7 @@
         <div class="neighborhood">
             <h2>{{neighborhood.name}}</h2>
             <div class="neighbor-img">
-                <img src="{{neighborhood.image.url}}" class="img-fluid" alt="Responsive image">
+                <img src="{{neighborhood.neighborhood_logo.url}}" class="img-fluid" alt="neighborhood_logo">
             </div>
             <p>{{neighborhood.description}}</p>
             {% if request.user.profile.neighborhood == neighborhood %}
