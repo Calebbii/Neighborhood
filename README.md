@@ -4,7 +4,6 @@
 Caleb bii.
 ### Description
 Neighborhood is web application about different neighborhoods showcasing various bussiness and it also keeps the people in the neighborhood posted on news posts and activities everything happening in your neighborhood.
-
 ### Setup and installations
 * Clone Project to your machine
 * Activate a virtual environment on terminal: source virtual/bin/activate
