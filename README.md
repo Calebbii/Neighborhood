@@ -24,6 +24,7 @@ Neighborhood is web application about different neighborhoods showcasing various
 * source virtual/bin/activate
 * Install dependancies
 * Install dependancies that will create an environment for the app to run pip install -r requirements.txt
+  
 ### Run The App 
 * python3.9 manage.py check
 * python manage.py makemigrations news
@@ -34,6 +35,8 @@ Neighborhood is web application about different neighborhoods showcasing various
 
 ### Testing the Application
 python3.9 manager.py tests
+
+### Known Bugs
 
 ### Built With 
 * Python3.9
