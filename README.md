@@ -34,7 +34,7 @@ Neighborhood is web application about different neighborhoods showcasing various
 * Open localhost:5000
 
 ### Testing the Application
-*python3.9 manager.py tests
+* python3.9 manager.py tests
 
 ### Known Bugs
 * There are no known bugs at the moment.  
