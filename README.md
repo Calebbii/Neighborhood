@@ -1,5 +1,4 @@
 # Neighborhood
-Neighborhood is web application about different neighborhoods showcasing various bussiness and it also keeps the people in the neighborhood posted on news posts and activities everything happening in your neighborhood.
 
 ## Author
 Caleb bii.
