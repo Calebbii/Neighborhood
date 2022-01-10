@@ -31,7 +31,7 @@ Neighborhood is web application about different neighborhoods showcasing various
 * python3.9 manage.py sqlmigrate news 0001
 * python3.9 manage.py migrate
 * python3.9 manage.py runserver 
-* Open localhost:5000
+* Open localhost:8000
 
 ### Testing the Application
 * python3.9 manager.py tests
