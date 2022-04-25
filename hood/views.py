@@ -7,12 +7,12 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def home(request):
     neighborhoods = Neighborhood.objects.all()
     return render(request, 'index.html', {'neighborhoods':neighborhoods})
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def users_profile(request,pk):
     user = User.objects.get(pk = pk)
     user_posts = Post.objects.filter(user_id = user.id).all()
@@ -35,7 +35,7 @@ def update_profile(request, username):
 
 
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def neighborhood(request, neighborhood_id):
     current_user = request.user
     neighborhood = Neighborhood.objects.get(id=neighborhood_id)
@@ -46,7 +46,7 @@ def neighborhood(request, neighborhood_id):
     return render(request, 'neighbourhoods.html', {'users':users,'current_user':current_user, 'neighborhood':neighborhood,'business':business,'posts':posts})
 
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def create_neighborhood(request):
     if request.method == 'POST':
         create_neighborhood_form = CreateNeighborHoodForm(request.POST, request.FILES)
@@ -60,7 +60,7 @@ def create_neighborhood(request):
     return render(request, 'newhood.html', {'create_neighborhood_form': create_neighborhood_form})
 
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def update_neighborhood(request, neighborhood_id):
     neighborhood = Neighborhood.objects.get(pk=neighborhood_id)
     if request.method == 'POST':
@@ -74,7 +74,7 @@ def update_neighborhood(request, neighborhood_id):
 
     return render(request, 'update_neighborhood.html', {"update_neighborhood_form":update_neighborhood_form})
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def delete_neighborhood(request,neighborhood_id):
     current_user = request.user
     neighborhood = Neighborhood.objects.get(pk=neighborhood_id)
@@ -82,7 +82,7 @@ def delete_neighborhood(request,neighborhood_id):
         neighborhood.delete_neighborhood()
     return redirect('home')
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def join_neighborhood(request, neighborhood_id):
     neighborhood = get_object_or_404(Neighborhood, id=neighborhood_id)
     request.user.profile.neighborhood = neighborhood
@@ -95,7 +95,7 @@ def get_neighborhood_users(request, neighborhood_id):
     return render(request, 'neighborhood_users.html', {'users': users})
 
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def leave_neighborhood(request, neighborhood_id):
     neighborhood = get_object_or_404(Neighborhood, id=neighborhood_id)
     request.user.profile.neighborhood = None
@@ -129,7 +129,7 @@ def single_neighbourhood(request, hood_id):
 
 
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def post(request, neighborhood_id):
     neighborhood = Neighborhood.objects.get(id=neighborhood_id)
     if request.method == 'POST':
@@ -145,7 +145,7 @@ def post(request, neighborhood_id):
     return render(request, 'post.html', {'add_post_form': add_post_form,'neighborhood':neighborhood})
 
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def update_post(request, post_id):
     post = Post.objects.get(pk=post_id)
     if request.method == 'POST':
@@ -159,7 +159,7 @@ def update_post(request, post_id):
 
     return render(request, 'update_post.html', {"update_post_form":update_post_form})
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def delete_post(request,post_id):
     current_user = request.user
     post = Post.objects.get(pk=post_id)
@@ -168,7 +168,7 @@ def delete_post(request,post_id):
     return redirect('home')
 
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def business(request,neighborhood_id):
     neighborhood = Neighborhood.objects.get(id=neighborhood_id)
     if request.method == 'POST':
@@ -183,7 +183,7 @@ def business(request,neighborhood_id):
         new_business_form = CreateBusinessForm()
     return render(request, 'business.html', {'new_business_form': new_business_form,'neighborhood':neighborhood})
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def delete_business(request,business_id):
     current_user = request.user
     business = Business.objects.get(pk=business_id)
@@ -192,7 +192,7 @@ def delete_business(request,business_id):
     return redirect('home')
 
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def update_business(request, business_id):
     business = Business.objects.get(pk=business_id)
     if request.method == 'POST':
@@ -207,7 +207,7 @@ def update_business(request, business_id):
     return render(request, 'update_business.html', {"update_business_form":update_business_form})
 
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def search(request):
   if 'name' in request.GET and request.GET["name"]:
     search_term = request.GET.get("name")
